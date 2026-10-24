@@ -1,0 +1,135 @@
+@import '../styles/tokens.css';
+@import './base.css';
+
+/* ---------- 滚动条：保留滚动能力，但给出清晰的细滚动提示 ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d5dd transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d0d5dd;
+  border: 2px solid transparent;
+  border-radius: var(--vq-radius-pill);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #98a2b3;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ---------- 全局布局：App.vue 的 app-shell 铺满窗口 ---------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+  color: var(--vq-text-main);
+  background-color: var(--vq-bg-page);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 表单与可选内容保留文本选择能力 */
+input,
+textarea,
+[contenteditable='true'],
+.vq-selectable {
+  user-select: text;
+}
+
+/* ---------- 键盘焦点 ---------- */
+:focus-visible {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:not([tabindex='-1']):not(.el-input__wrapper):not(.el-select__wrapper):focus-visible,
+.el-button:focus-visible {
+  outline: 2px solid var(--vq-primary);
+  outline-offset: 2px;
+}
+
+/* Element Plus 输入类组件已有自己的 focus 边框，避免再叠一层 outline */
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+.el-input__inner:focus,
+.el-input__inner:focus-visible,
+.el-textarea__inner:focus,
+.el-textarea__inner:focus-visible {
+  outline: none !important;
+}
+
+::selection {
+  color: var(--vq-text-title);
+  background: var(--vq-primary-soft);
+}
+
+code {
+  font-weight: 600;
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: var(--vq-bg-subtle);
+  font-family: var(--vq-font-mono);
+  font-size: 85%;
+}
+
+/* ---------- Electron 窗口拖拽区域 ---------- */
+.vq-drag {
+  -webkit-app-region: drag;
+}
+
+.vq-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* ---------- 主界面子路由切换（由 MainView 使用） ---------- */
+.vq-page-enter-active,
+.vq-page-leave-active {
+  transition:
+    opacity var(--vq-duration-base) var(--vq-ease),
+    transform var(--vq-duration-base) var(--vq-ease);
+}
+
+.vq-page-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.vq-page-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vq-page-enter-active,
+  .vq-page-leave-active {
+    transition: none;
+  }
+}

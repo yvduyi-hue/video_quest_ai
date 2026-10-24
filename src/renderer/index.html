@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>VQAI</title>
+    <!--
+      https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+      全量放开：Polyv 上传 SDK 与点播播放器都会在渲染进程直连 api.polyv.net / *.videocc.net
+      （上传还会走接口下发的 OSS 存储域名），SDK 内部还通过 Function 构造器动态执行代码
+      （browserify 打包的依赖），因此 script-src 必须带 'unsafe-eval'，否则初始化阶段就报 EvalError。
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * 'self' data: blob: filesystem: http: https: ws: wss:;
+        script-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:;
+        style-src * 'self' 'unsafe-inline';
+        img-src * 'self' data: blob: filesystem:;
+        media-src * 'self' data: blob: filesystem: http: https:;
+        connect-src * 'self' data: blob: http: https: ws: wss:;
+        worker-src * 'self' blob: data:;"
+    />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+/**
+ * VideoQuest 设计变量（renderer 全局）
+ * 只放 token，不放组件样式；组件样式使用这些变量组合。
+ */
+:root {
+  /* ---------- 品牌色 ---------- */
+  --vq-primary: #155eef;
+  --vq-primary-hover: #134ec4;
+  --vq-primary-active: #0f3ea1;
+  --vq-primary-light: #f0f4fe;
+  --vq-primary-tint: #f5f8ff;
+  --vq-primary-soft: #e7effe;
+
+  /* ---------- 语义色 ---------- */
+  --vq-success: #12b76a;
+  --vq-success-bg: #ecfdf3;
+  --vq-success-text: #027a48;
+  --vq-warning: #f79009;
+  --vq-warning-bg: #fffaeb;
+  --vq-warning-text: #b54708;
+  --vq-danger: #f04438;
+  --vq-danger-bg: #fef3f2;
+  --vq-danger-text: #b42318;
+  --vq-purple: #7a5af8;
+  --vq-purple-bg: #f4f3ff;
+  --vq-purple-text: #5925dc;
+  --vq-info: #667085;
+  --vq-info-bg: #f2f4f7;
+  --vq-info-text: #344054;
+  --vq-blue-bg: #eff4ff;
+  --vq-blue-text: #175cd3;
+
+  /* ---------- 文字 ---------- */
+  --vq-text-title: #101828;
+  --vq-text-main: #344054;
+  --vq-text-secondary: #475467;
+  --vq-text-tertiary: #667085;
+  --vq-text-placeholder: #98a2b3;
+  --vq-text-disabled: #d0d5dd;
+  --vq-text-inverse: #ffffff;
+
+  /* ---------- 背景 ---------- */
+  --vq-bg-page: #fafafc;
+  --vq-bg-surface: #ffffff;
+  --vq-bg-subtle: #f2f4f7;
+  --vq-bg-hover: #f9fafb;
+  --vq-bg-active: #f0f4fe;
+
+  /* ---------- 边框 ---------- */
+  --vq-border: #e4e7ec;
+  --vq-border-light: #eaecf0;
+  --vq-border-strong: #d0d5dd;
+
+  /* ---------- 圆角 ---------- */
+  --vq-radius-xs: 6px;
+  --vq-radius-sm: 8px;
+  --vq-radius-md: 10px;
+  --vq-radius-lg: 12px;
+  --vq-radius-xl: 16px;
+  --vq-radius-pill: 999px;
+
+  /* ---------- 阴影 ---------- */
+  --vq-shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --vq-shadow-sm: 0 2px 6px rgba(16, 24, 40, 0.06);
+  --vq-shadow-md: 0 8px 24px rgba(16, 24, 40, 0.08);
+  --vq-shadow-lg: 0 16px 40px rgba(16, 24, 40, 0.12);
+  --vq-focus-ring: 0 0 0 3px rgba(21, 94, 239, 0.16);
+
+  /* ---------- 字体 ---------- */
+  --vq-font-sans:
+    'mi_normal', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vq-font-mono:
+    'SFMono-Regular', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace;
+  --vq-font-size-xs: 11px;
+  --vq-font-size-sm: 12px;
+  --vq-font-size-md: 13px;
+  --vq-font-size-base: 14px;
+  --vq-font-size-lg: 16px;
+  --vq-font-size-xl: 18px;
+  --vq-font-size-2xl: 22px;
+  --vq-font-size-3xl: 28px;
+  --vq-line-height-xs: 16px;
+  --vq-line-height-sm: 18px;
+  --vq-line-height-md: 20px;
+  --vq-line-height-base: 22px;
+  --vq-line-height-lg: 24px;
+  --vq-line-height-xl: 26px;
+  --vq-line-height-2xl: 30px;
+  --vq-line-height-3xl: 36px;
+
+  /* ---------- 间距 ---------- */
+  --vq-space-1: 4px;
+  --vq-space-2: 8px;
+  --vq-space-3: 12px;
+  --vq-space-4: 16px;
+  --vq-space-5: 20px;
+  --vq-space-6: 24px;
+  --vq-space-7: 28px;
+  --vq-space-8: 32px;
+  --vq-space-10: 40px;
+
+  /* ---------- 布局尺寸 ---------- */
+  --vq-sidebar-w: 240px;
+  --vq-sidebar-w-collapsed: 72px;
+  --vq-topbar-h: 64px;
+  --vq-titlebar-h: 32px;
+  --vq-control-h: 36px;
+  --vq-control-h-lg: 40px;
+  --vq-nav-item-h: 42px;
+
+  /* ---------- 动效 ---------- */
+  --vq-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --vq-duration-fast: 160ms;
+  --vq-duration-base: 200ms;
+  --vq-duration-slow: 240ms;
+}

@@ -1,0 +1,42 @@
+@import './base.css';
+
+/* 全局隐藏水平/垂直滚动条（保留滚动能力） */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Chrome / Edge / Electron */
+}
+
+/* 全局布局：由 App.vue 的 app-shell（标题栏 + RouterView）铺满窗口 */
+body {
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+  background-color: var(--el-bg-color, #fff);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+
+code {
+  font-weight: 600;
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: var(--color-background-mute);
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
+  font-size: 85%;
+}
